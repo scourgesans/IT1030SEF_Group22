@@ -1,0 +1,250 @@
+<html lang= "en">
+<head>
+    <meta charset= "UTF-8">
+    <meta name= "viewport" content= "width=device-width, initial-scale=1.0">
+    <title>Upload Item</title>
+    <style>
+        body {
+            background: 
+            linear-gradient(to bottom,transparent,#ffff 400px),
+            radial-gradient(70% 300px at left top,#c3dc99,transparent),
+            radial-gradient(80% 300px at right top,#c5d5fa,transparent);
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding-top: 10px;
+            padding: 10px 0;
+        }
+
+        .icon{
+           display: inline-block;
+           vertical-align: bottom;
+        }
+        .website{
+            display: inline-block;
+            font-family: Georgia,serif;
+            font-size: xx-large; 
+            font-weight: bold;
+            color:#3665db;
+        }
+
+        .navbar ul{
+            list-style-type: none;
+            background-color: transparent;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            float: right;
+        }
+        .navbar a{
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 2px solid #3a60c9;
+            margin: 10px;
+        }
+
+        .navbar a:hover{
+            background-color: #83b5e3;
+        }
+        .navbar li{
+            float: left;
+        }
+
+        .table_container{
+            margin: 100px auto 0;
+            max-width: 1000px;
+        }
+        .table_heading{
+            font-size: larger;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        /* https://www.w3schools.com/html/tryit.asp?filename=tryhtml_table_intro */
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td, th {
+            border: 1px solid black;
+            text-align: left;
+            padding: 16px;
+        }
+        td.firstcol{
+            background-color:#e6eaf3;
+        }
+        td:first-child{       
+            font-weight: bold;
+        }
+        table tr td:nth-child(2){     
+            background-color: #fff;
+        }
+
+        ::file-selector-button{
+            border: 2px solid black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #d1e4f8f0;
+        }
+        ::file-selector-button:hover{
+            background-color: #478edbfd;
+            cursor: pointer;
+        }
+
+        input[type="button"]{
+            padding: 10px 20px;
+            background-color: #56bef2;
+            color: white;
+            font-weight: 600;
+            border: 1px solid #24b4fb ;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 2px;
+        }
+        input[type="button"]:hover{
+            background-color: #0071e2;
+            transition: 0.5s;
+        }
+      
+        @media (max-width: 600px) {
+            table,th,td,tr{
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+    </head>
+<body>
+    <div class="main">
+        <div class="icon"><img src="https://i.imgur.com/QLPzrbw.png" alt="icon" width="120" height="60"/></div>
+        <div class="website">Lost and Found System</div>
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="Adminpage.html">Admin Page</a></li>
+            <li><a href="Uploaditem.html">Upload Item</a></li>
+            <li><a href="Claimitem.html">Claim Item</a></li>
+            <li><a href="Homepage.html">Logout</a></li>
+        </ul>
+    </nav>
+
+<!--Register Form-->    
+<div class="table_container">
+    <h4 class="table_heading">Lost goods register</h4>
+	<form id="register">
+    <table>
+        <!--First line-->
+        <tr>
+            <td class="firstcol">The Campus of Missing Items:</td>
+            <td id = "location">
+                <input type= "radio" name= "campus" value= "MC">Main Campus
+                <input type= "radio" name= "campus" value= "IOH">IOH
+                <input type= "radio" name= "campus" value= "JCC">JCC
+            </td>
+        </tr>
+        <!--Second line-->
+        <tr>
+            <td class="firstcol">The Floor of The Missing Item:</td>
+            <td> 
+             <select id= "floor">
+                <option>--Please select the floor where the item is missing--</option>
+                <option>I don't know which floor I lost it on</option>
+                <option>G</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+             </select>   
+            </td>
+        </tr>
+        <!--Third line-->
+        <tr>
+            <td class="firstcol">The Type of Item Missing:</td>
+            <td>
+                <select id= "type">
+                    <option>card</option>
+                    <option>clothes</option>
+                    <option>Card case</option>
+                    <option>purse</option>
+                    <option>bag</option>
+                    <option>Portable water bottle</option>
+                    <option>cosmetics</option>
+                    <option>Electronic equipment</option>
+                    <option>pendant</option>
+                    <option>Charging equipment</option>
+                    <option>accessory</option>
+                    <option>others</option>
+                </select>
+                <!--<input type= "text" id= "extra_info" placeholder= "--Please fill in the type of item you lost--"> -->
+            </td>
+        </tr>
+        <!--Fourth line-->
+        <!--<tr>
+            <td>
+            The Time of Item Missing(DD/MM/YYYY):
+            </td>
+            <td>
+            <input id= "lost_date" type= "date" name= "lost_date">
+            </td>
+        </tr>-->
+        <!--Fifth line-->
+        <tr>
+            <td class="firstcol">Give a general description of the shape, color <br>and other important features of the missing item:</td>
+            
+            <td><textarea  id= "description"></textarea></td>
+        </tr>
+        <tr>
+            <td class="firstcol">Where is the item now</td>
+            <td id = "Securityroom">
+                <input type= "radio" name= "security room" value= "MC security room">MC security room
+                <input type= "radio" name= "security room" value= "IOH security room">IOH security room
+                <input type= "radio" name= "security room" value= "JCC security room">JCC security room
+            </td>
+        </tr>
+        <!--Sixth line-->
+        
+        <tr>
+            <td class="firstcol">Please upload the item's image here</td>
+            <td>
+                <input type="file" name="" id="fileId" capture="environment", accept="image/*"><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td class="firstcol"></td>
+            <td>
+                <input type = "checkbox" required = "true" id="policy" > I agree to the privacy policy
+            </td>
+        </tr>
+        <!--Seventh line-->
+        <tr>
+            <td class="firstcol"></td>
+            <td>
+                <input type = "button" value ="submit" onclick = "get_data()">
+            </td>
+        </tr>
+    </table>
+	</form>
+</div>
+    <p id= "location_show"></p>
+    <p id= "floor_show"></p>
+    <p id= "type_show"></p>
+    <p id= "time_show"></p>
+    <script src = "LostAndFoundScript.js">
+
+    </script>
+
+</body>
+</html>

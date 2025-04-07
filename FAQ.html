@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions</title>
+    <style>
+        body{
+            background: 
+            linear-gradient(to bottom,transparent,#ffff 400px),
+            radial-gradient(70% 300px at left top,#c3dc99,transparent),
+            radial-gradient(80% 300px at right top,#c5d5fa,transparent);
+            min-height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding-top: 10px;
+            padding: 10px 0;
+            box-sizing: border-box;
+        }
+
+        .icon{
+           display: inline-block;
+           vertical-align: bottom;
+        }
+        .website{
+            display: inline-block;
+            font-family: Georgia,serif;
+            font-size: xx-large; 
+            font-weight: bold;
+            color:#3665db;
+        }
+
+        .navbar ul{
+            list-style-type: none;
+            background-color: transparent;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            float: right;
+            flex-wrap: wrap;
+        }
+        .navbar a{
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 2px solid #3a60c9;
+            margin: 10px;
+        }
+        .navbar a:hover{
+            background-color: #83b5e3;
+        }
+        .navbar li{
+            float: left;
+        }
+
+        .FAQheading{
+            text-align: center;
+            font-size: 35px;
+            width: 100%;
+        }
+
+        .accordion{
+            width: 90%;
+            max-width: 850px;
+            margin: 20px auto;  /* 20px: top&bottom ; auto: left&right */
+            color: black;
+            background-color: transparent;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .accordion img{
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 30px;
+            border-radius: 15px;
+        }
+        .accordion .container{
+            margin: 10px 0;
+        }
+        .accordion .heading{
+            padding: 10px;
+            font-size: 30px;
+            color: black;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .accordion .heading::before{
+            content: "+";
+            color: black;
+            font-size: 30px;
+            position: absolute;
+            right: 10px;
+        }
+        .accordion .content{
+            background: transparent;
+            max-height: 0;
+            font-size: 22px;
+            text-align: justify;
+            overflow: hidden;
+            transition: max-height 1s ease-out;
+        }
+        .accordion hr{
+            width: 100%;
+            margin-left: 0;
+            border: 1px solid grey;
+        }
+        .accordion .container.active .content{
+            max-height: 200px;
+        }
+        .accordion .container.active .heading::before{
+            content: '-';
+            font-size: 25px;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <div class="icon"><img src="https://i.imgur.com/QLPzrbw.png" alt="icon" width="120" height="60"/></div>
+        <div class="website">Lost and Found System</div>
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a href="SearchLostItems.html">Search Lost Items</a></li>
+            <li><a href="RetrieveItem.html">Retrieve Item</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!--FAQ sections-->
+    <div class="accordion-body">
+    <div class="accordion">
+        <img src="https://www.superoffice.com/globalassets/blog/2016/10/how-to-build-faq-section.jpg?v=49906d" alt="FAQ"> 
+        <h1 class="FAQheading">Frequently Asked Questions</h1>
+        <hr>   <!--a thematic break between paragraph-level elements-->
+        <div class="container">
+            <div class="heading">What should I do if I have lost a valuable item at school?</div>
+            <div class="content">If you have lost something valuable or an item containing personal data at MU(e.g.USB,wallet,octopus card,mobile phone and computer,etc.), please complete the Report Form and submit it to the security control rooms.</div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="heading">What is the procedure for claiming found items?</div>
+            <div class="content">For any found or claimed properties, please visit the security control rooms. The staff will asist you in verifying ownership and retrieving your item.</div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="heading">How can I claim sundry supplies items?</div>
+            <div class="content">Claims for sundry supplies items(e.g. umbrella, water bottle, stationery and glasses,etc.) will be at the self-service corners near the security control rooms on MC, JCC and IOH.</div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="heading">How long will lost items be kept?</div>
+            <div class="content">Lost items will be retained for a period of one month. Any items that remain unclaimed after this period will be disposed of in suitable ways.</div>
+        </div>
+        <hr>
+        <div class="container">
+            <div class="heading">Contact information</div>
+            <div class="content">For enquiries, please feel free to call Hxx Yxx at 1234 5678 or via email (hkmuxx@hxxyxx1.com) .</div>
+        </div>
+        <hr>
+    </div>
+    </div>
+
+    <script>
+        const accordion = document.getElementsByClassName('container');
+        for (i=0; i<accordion.length;i++){
+            accordion[i].addEventListener('click',function() {
+                this.classList.toggle('active')
+            })
+        }
+    </script>
+
+<!--Accordion: https://www.freecodecamp.org/chinese/news/build-an-accordion-menu-using-html-css-and-javascript/-->
+</body>
+</html>

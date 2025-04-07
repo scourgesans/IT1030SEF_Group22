@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Item</title>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> 
+ 
+ <script src = "LostAndFoundScript.js"></script>
+
+    <style>
+        body {
+            background: 
+            linear-gradient(to bottom,transparent,#ffff 400px),
+            radial-gradient(70% 300px at left top,#c3dc99,transparent),
+            radial-gradient(80% 300px at right top,#c5d5fa,transparent);
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding-top: 10px;
+            padding: 10px 0;
+        }
+
+        .icon{
+           display: inline-block;
+           vertical-align: bottom;
+        }
+        .website{
+            display: inline-block;
+            font-family: Georgia,serif;
+            font-size: xx-large; 
+            font-weight: bold;
+            color:#3665db;
+        }
+        .navbar ul{
+            list-style-type: none;
+            background-color: transparent;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            float: right;
+        }
+        .navbar a{
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 2px solid #3a60c9;
+            margin: 10px;
+        }
+        .navbar a:hover{
+            background-color: #83b5e3;
+        }
+        .navbar li{
+            float: left;
+        }
+
+        form{
+            margin-top: 60px;
+            margin-left: 20px;
+        }
+
+        input[type="button"]{
+            padding: 10px 20px;
+            background-color: #56bef2;
+            color: white;
+            font-weight: 600;
+            border: 1px solid #24b4fb ;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 2px;
+        }
+        input[type="button"]:hover{
+            background-color: #0071e2;
+            transition: 0.5s;
+        }
+
+        table{
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            table-layout: auto;
+        }
+        th, td{
+            padding: 10px;
+            width: 150px;
+        }
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        thead{
+            border: 2px solid black;
+            text-align: center;
+            background-color: #dfe5f2;
+            color: black;
+        }
+        tbody{
+            background-color: #eff4ff;
+        }
+
+        .claimitemquestion{
+            margin-left: 20px;
+        }
+        </style>
+</head>
+<body>
+    <div class="main">
+        <div class="icon"><img src="https://i.imgur.com/QLPzrbw.png" alt="icon" width="120" height="60"/></div>
+        <div class="website">Lost and Found System</div>
+    </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="Adminpage.html">Admin Page</a></li>
+            <li><a href="Uploaditem.html">Upload Item</a></li>
+            <li><a href="Claimitem.html">Claim Item</a></li>
+            <li><a href="Homepage.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!--claim item table-->
+    <form id="itemID">
+        <label for="item-content"><h2>Please enter item id e.g: 12345 </h2></label>
+        <input type="textbox" id="item-content" required >
+        <input type="button" value="Submit" id="item-submit" onclick="ClaimItem()">
+        <h3><div id="hint"> </div></h3>
+        <table id="ClaimTable">
+            <thead>
+                <tbody>
+
+                </tbody>
+            </thead>
+        </table>
+    </form>
+    
+    <!--Questions-->
+    <div class="claimitemquestion">
+        <h3 id="QuestionHeader"> </h3> <!--QuestionHeader-->
+        <p><div id="Question"> </div>    </p> <!--Security Question-->
+        <div id="qrcode"></div> <!-- Qr code image -->
+    </div>
+
+</body>
+</html>

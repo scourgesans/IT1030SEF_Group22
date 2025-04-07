@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost and Found System</title>
+    <style>
+        body {
+            background: 
+            linear-gradient(to bottom,transparent,#ffff 400px),
+            radial-gradient(70% 300px at left top,#c3dc99,transparent),
+            radial-gradient(80% 300px at right top,#c5d5fa,transparent);
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding-top: 10px;
+            padding: 10px 0;
+        }
+        /* website icon & name */
+        .icon{
+           display: inline-block;
+           vertical-align: bottom;
+        }
+        .website{
+            display: inline-block;
+            font-family: Georgia,serif;
+            font-size: xx-large; 
+            font-weight: bold;
+            color:#3665db;
+        }
+
+        .text{
+            padding: 10px;
+        }
+
+        /* website selections */
+        .navbar ul{
+            list-style-type: none;
+            background-color: transparent;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            float: right;
+        }
+        .navbar a{
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 2px solid #3a60c9;
+            margin: 10px;
+        }
+
+        .navbar a:hover{
+            background-color: #83b5e3;
+        }
+        .navbar li{
+            float: left;
+        }
+        
+        /* Homepage items */
+        .container{
+            max-width: 1400px;
+            padding: 0 30px;
+            margin: 0 auto;
+            display: flex;  /* make horizontal to each other */
+            flex-wrap: wrap;
+            justify-content: center; 
+            gap: 30px; 
+        }
+        .card{
+            max-width: 500px;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 3px 3px grey;
+            display: flex;
+            flex: 1 0 300px; 
+            flex-direction: column;
+            transition: 0.5s;
+        }
+
+        .card:hover{
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+        .card img{
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .content{
+            padding: 2px 16px;
+        }
+
+    </style>
+    
+</head>
+<body>
+<!-- website icon & name-->
+<div class="main">
+    <div class="icon"><img src="https://i.imgur.com/QLPzrbw.png" alt="icon" width="120" height="60"/></div>
+    <div class="website">Lost and Found System</div>
+</div>
+<!-- website selection -->
+<nav class="navbar">
+    <ul>
+        <li><a href="Homepage.html">Home</a></li>
+        <li><a href="SearchLostItems.html">Search Lost Items</a></li>
+        <li><a href="RetrieveItem.html">Retrieve Item</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="Login.html">Login</a></li>
+    </ul>
+</nav>
+
+<div class="text">
+    <h2>Find your lost item</h2>
+    <p>If you have lost or found items within our school community, this website intended to support your needs.</p>
+</div>
+
+<!--Homepage items-->
+<div class="container">
+    <div class="card">
+        <a href="#SearchLostItems.html">
+        <img src="https://www.fodors.com/ee/images/article/Jennifer-Arnow-Personal-Item.jpg" alt="ItemList"></a>
+        <div class="content">
+            <h4><b>Search Lost Items</b></h4>
+            <p>Browse through the found items listed on our website. Utilize the category filters for a more efficient search.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <a href="#RetrieveItem.html">
+        <img src="https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_limit,w_1280,h_800,dpr_2/https://assets.app.engoo.com/images/4hSaD4pvCJpDgIM3uo9lpS.jpeg" alt="Retrieve item"></a>
+        <div class="content">
+            <h4><b>Retrieve item</b></h4> 
+            <p>Here are the details about the location and approach to retreive your item.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <a href="#FAQ.html">
+        <img src="https://image-service.web.oebb.at/infra/.imaging/default/dam/infra/buttons/icon-lost-found-oebb-2.png/jcr:content.png?t=1660725593835&scale=1.0" alt="FAQ"></a>
+        <div class="content">
+            <h4><b>FAQ</b></h4> 
+            <p>If you have any problems,consult the FAQ page on our website.</p>
+        </div>
+    </div>
+</div>
+        
+<!-- Radial-gradient: https://www.cnblogs.com/zjianfei/p/17911730.html -->
+<!-- Navigation bar: https://www.yahubaba.com/codelab/tabs?page=2 -->
+<!-- Cards: https://www.w3schools.com/howto/howto_css_cards.asp -->
+
+</body>
+</html>

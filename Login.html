@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Georgia,serif;
+            background-color: #d8f2a9;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .navbar ul{
+            list-style-type: none;
+            background-color: transparent;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            float: right;
+        }
+        .navbar a{
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 2px solid #3a60c9;
+            margin: 10px;
+        }
+
+        .navbar a:hover{
+            background-color: #83b5e3;
+        }
+        .navbar li{
+            float: left;
+        }
+
+        .center{
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%,-40%);
+            width: 500px;
+            height: 400px;
+            background: white;
+            border-radius: 2px;
+        }
+        .center h1{
+            text-align: center;
+            padding: 0 0 20px 0;
+            border-bottom: 1px solid silver;
+        }
+        .center form{
+            padding: 0 60px;
+            box-sizing: border-box;
+        }
+
+        form .text_field{
+            position: relative;
+            border-bottom: 2px solid #adadad;
+            margin: 30px 0;
+        }
+        .text_field input{
+            width: 100%;
+            padding: 0 5px;
+            height: 40px;
+            font-size: 16px;
+            border: none;
+            background: none;
+            outline: none;
+        }
+        .text_field label{
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            color: #adadad;
+            transform: translateY(-50%);
+            font-size: 16px;
+            pointer-events: none;
+            transition: 0.5s;
+            opacity: 1;
+        }
+        .text_field span::before{
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #8ab345;
+        }
+        .text_field input:focus ~ label,
+        .text_field input:not(:placeholder-shown) ~ label{
+            top:-5px;
+            color: #8ab345;
+            opacity: 0;
+        }
+
+        input[type="submit"]{
+            width: 100%;
+            height: 50px;
+            border: 1px solid;
+            background-color: #8ab345;
+            border-radius: 15px;
+            font-size: 16px;
+            color: white;
+            font-weight: 700;
+            cursor: pointer; /* specifies the mouse cursor to be displayed when pointing over an element */
+            outline: none;
+        }
+        input[type="submit"]:hover{
+            border-color: #e5f0d5;
+            transition: 0.5s;
+        }
+    </style>
+        <script src="LostAndFoundScript.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="LostandFoundSystem.html">Home</a></li>
+            <li><a href="SearchLostItems.html">Search Lost Items</a></li>
+            <li><a href="RetrieveItem.html">Retrieve Item</a></li>
+            <li><a href="FAQ.html">FAQ</a></li>
+            <li><a href="Login.html">Login</a></li>
+        </ul>
+    </nav>
+<!--Login form-->
+    <div class="center">
+        <h1>Welcome</h1>
+        <form id="adminform">
+            <div class="text_field">
+                <input type="text" id="item-content" name="name" required placeholder=" ">
+                <span> </span>
+                <label>Username</label>
+            </div>
+            <div class="text_field">
+                <input type="password" name="password" required placeholder=" ">
+                <span> </span>
+                <label>Password</label>
+            </div>
+            <div class="login">
+                <input type="submit" value="Login" onclick="AdminLogin()">
+            </div>
+        </form>
+    </div>
+<!--Login: https://medium.com/@TemitopeVictoria/building-a-simple-login-page-with-html-and-css-fcc05ea42c1d-->
+
+</body>
+</html>

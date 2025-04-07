@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="10"> page every 10 second for database update -->
+    <title>Admin Database</title>
+    <style>
+        body {
+            background: 
+            linear-gradient(to bottom,transparent,#ffff 400px),
+            radial-gradient(70% 300px at left top,#c3dc99,transparent),
+            radial-gradient(80% 300px at right top,#c5d5fa,transparent);
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding-top: 10px;
+            padding: 10px 0;
+            font-family: Georgia,serif;
+        }
+
+        .icon{
+           display: inline-block;
+           vertical-align: bottom;
+        }
+        .website{
+            display: inline-block;
+            font-family: Georgia,serif;
+            font-size: xx-large; 
+            font-weight: bold;
+            color:#3665db;
+        }
+
+        .navbar ul{
+            list-style-type: none;
+            background-color: transparent;
+            padding: 0px;
+            margin: 0px;
+            overflow: hidden;
+            float: right;
+        }
+        .navbar a{
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 2px solid #3a60c9;
+            margin: 10px;
+        }
+
+        .navbar a:hover{
+            background-color: #83b5e3;
+        }
+        .navbar li{
+            float: left;
+        }
+
+        form{
+            margin-top: 60px;
+            margin-left: 20px;
+        }
+
+        input[type="button"]{
+            padding: 10px 20px;
+            background-color: #56bef2;
+            color: white;
+            font-weight: 600;
+            border: 1px solid #24b4fb ;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 2px;
+        }
+        input[type="button"]:hover{
+            background-color: #0071e2;
+            transition: 0.5s;
+        }
+
+        /* file upload button: https://www.w3schools.com/cssref/tryit.php?filename=trycss_sel_file-selector-button2 */
+        ::file-selector-button{
+            border: 2px solid black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background-color: #d1e4f8f0;
+        }
+        ::file-selector-button:hover{
+            background-color: #478edbfd;
+            cursor: pointer;
+        }
+        /* table: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead */
+        .Pending, .FoundClaimItem{
+            margin-left: 20px;
+        }
+        table{
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            table-layout: auto;
+        }
+        th, td{
+            padding: 10px;
+            width: 150px;
+        }
+        table, th, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        thead{
+            border: 2px solid black;
+            text-align: center;
+            background-color: #dfe5f2;
+            color: black;
+        }
+        tbody{
+            background-color: #eff4ff;
+        }
+        </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="icon"><img src="https://i.imgur.com/QLPzrbw.png" alt="icon" width="120" height="60"/></div>
+        <div class="website">Lost and Found System</div>
+    </div>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="Adminpage.html">Admin Page</a></li>
+            <li><a href="Uploaditem.html">Upload Item</a></li>
+            <li><a href="Claimitem.html">Claim Item</a></li>
+            <li><a href="Homepage.html">Logout</a></li>
+        </ul>
+    </nav>
+
+<!--Admin buttons-->
+    <form id="adminsetting">
+        <input type="button" value="Click to showTable" onclick="adminTable()">
+        <input type="button" value="Click to ResetStorage" onclick="ResetLocalStorage()">
+        <br><br>
+        <label for="upload">Click to upload Database: </label>
+        <input type="file" id="UploadedDatabase" onchange="UploadDatabase()">
+    </form>
+
+    <!--Admin pending item table-->
+    <div class="Pending">
+        <h2>Pending items</h2>
+        <table id="pendingItemTable">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+    </div>
+
+    <!--Admin found&claim item table-->
+    <div class="FoundClaimItem">
+        <h2>Found and Claimed items</h2>
+        <table id="foundClaimedItemTable">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    
+              <script src="LostAndFoundScript.js"></script>
+              <script>
+			  
+window.addEventListener('load', function() {
+  adminTable()
+})
+</script>
+
+</body>
+</html>
