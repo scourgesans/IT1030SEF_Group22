@@ -1,4 +1,4 @@
-1. Install all the files from the github link.
+1. Install all the files from the github link and feel free to watch demonstration video about the website.
 
 2. Open the Homepage.html to start using the Lost and Found System.
 
