@@ -1,0 +1,20 @@
+1. Install all the files from the github link.
+
+2. Open the Homepage.html to start using the Lost and Found System.
+
+3. For the search lost item page, you can search the item by description , filter by item type or by time in ascending or descending.
+
+4. The retrieve item page provides information of campus security room location for students to register or claim their lost items.
+
+5. FAQ ( Frequently asked questions) provided the answers of frequently asked questions about the lost and found system.
+
+6. The login page redirect to the admin system which
+ username is 123, password is 123.
+
+7. In admin page, Click to showTable button is to show the all the table(Pending items and Found and Claimed items table in admin page), 
+Click to ResetStorage in the admin page to reset the local storage in all tables, which clears all the items from the list or table.
+Admin can also validate the input form of lost items or delete the lost items in the database.
+
+8. Upload item page provides a form for the users to upload the lost items by filling necessary information.
+
+9. You can input item id in the claim item page to claim the following item with additional security questions provided to validate for the real owner.
