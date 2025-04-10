@@ -14,7 +14,7 @@
 7. In admin page, Click to showTable button is to show the all the table(Pending items and Found and Claimed items table in admin page), 
 Click to ResetStorage in the admin page to reset the local storage in all tables, which clears all the items from the list or table.
 Admin can also validate the input form of lost items or delete the lost items in the database.
-Click to upload Database button can be used to upload database file in JSON format.
+Click to upload Database button can be used to upload database file in JSON format. (can be tested using Database backup.txt)
 
 8. Upload item page provides a form for the users to upload the lost items by filling necessary information.
 
